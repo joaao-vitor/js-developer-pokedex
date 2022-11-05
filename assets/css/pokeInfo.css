@@ -1,24 +1,25 @@
+:root{
+    --cor-scrollbar: #0000001a;
+}
 *{
     margin: 0;
     padding: 0;
     word-wrap: break-word;
 }
-
+h1, p, span{
+    text-transform: capitalize;
+}
 .info-container{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
     width: 100vw;
-    background-color: #49D0B0;
 }
 
 .poke-info{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     padding: 3rem 1.5rem;
-
 }
 .back-btn{
     border: none;
@@ -42,33 +43,33 @@
 }
 
 .poke-info h1{
-    color: #E3FFFD;
+    color: #ffffff;
     margin: 0;
     padding: 0;
     margin-bottom: 0.75rem;
 }
 .type-list .type{
     margin: 0;
-    background-color: #60E1CA;
     border-radius: 2rem;
     font-size: 0.8rem;
     padding: 0.35rem 1rem;
     margin-right: 0.25rem;
-    color: #E3FFFD;
+    color: #ffffff;
     text-transform: capitalize;
+    filter: brightness(1.1);
 }
 .poke-photo{
     position: absolute;
-    height: 25vh;
+    height: 170px;
     align-self: center;
     margin-top: 25vh;
 }
 .poke-details{
     height: 55%;
-    border-top-left-radius: 3rem;
-    border-top-right-radius: 3rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
     background-color: #ffffff;
-    padding: 3.5rem 2.5rem;
+    padding: 1.5rem 0.5rem;
 }
 
 .poke-details h3{
@@ -81,13 +82,18 @@
     margin-top: 1.5rem;
 }
 .poke-details-content p, .breeding-details p{
-    display: grid;
-    grid-template-columns: 0.3fr 0.7fr;
-    gap: 2rem;
-    font-size: 1rem;
-    margin-top: .65rem;
+    display: block;
+}
+.container-details{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    line-height: 1.5rem;
 }
 .categories{
+    display: block;
     font-size: 1rem;
     font-weight: 300;
 }
@@ -101,6 +107,41 @@
     height: 15px;
 }
 
+.loading-img{
+    display: block;
+    margin: auto;
+    height: 15%;
+}
+@media only screen and (min-width: 320px) {
+    .poke-details-content p, .breeding-details p{
+        display: grid;
+        grid-template-columns: 0.3fr 0.7fr;
+        gap: 2rem;
+        font-size: 1rem;
+        margin-top: .65rem;
+    }
+    .categories{
+        display: inline;
+    }
+
+    .poke-photo{
+        position: absolute;
+        height: 25vh;
+        max-width: 25vh;
+        align-self: center;
+        margin-top: 25vh;
+    }
+    .poke-details{
+        border-top-left-radius: 3rem;
+        border-top-right-radius: 3rem;
+        padding: 3.5rem 2.5rem;
+    }
+    .poke-info{
+        
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
 @media only screen and (min-width: 992px) {
     body{
         display: flex;
@@ -123,3 +164,98 @@
         margin-top: 200px;
     }
 }
+
+.normal {
+    background-color: #a6a877;
+}
+
+.grass {
+    background-color: #77c850;
+}
+
+.fire {
+    background-color: #ee7f30;
+}
+
+.water {
+    background-color: #678fee;
+}
+
+.electric {
+    background-color: #f7cf2e;
+}
+
+.ice {
+    background-color: #98d5d7;
+}
+
+.ground {
+    background-color: #dfbf69;
+}
+
+.flying {
+    background-color: #a98ff0;
+}
+
+.poison {
+    background-color: #a040a0;
+}
+
+.fighting {
+    background-color: #bf3029;
+}
+
+.psychic {
+    background-color: #f65687;
+}
+
+.dark {
+    background-color: #725847;
+}
+
+.rock {
+    background-color: #b8a137;
+}
+
+.bug {
+    background-color: #a8b720;
+}
+
+.ghost {
+    background-color: #6e5896;
+}
+
+.steel {
+    background-color: #b9b7cf;
+}
+
+.dragon {
+    background-color: #6f38f6;
+}
+
+.fairy {
+    background-color: #f9aec7;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #8f54a0 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    height: 80%;
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: none;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--cor-scrollbar);
+    border-radius: 10px;
+    padding: 1rem;
+  }
